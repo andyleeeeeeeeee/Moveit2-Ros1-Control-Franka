@@ -1,0 +1,40 @@
+<launch>
+
+  <param name="/use_sim_time" value="false" />
+  <arg name="show_rviz" default="true" />
+
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find panda_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true" />
+  </include>
+
+  <!-- For publish fake controller's joint states -->
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false" />
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node> -->
+  <!-- <node name="joint_state_desired_publisher" pkg="topic_tools" type="relay" args="joint_states joint_states_desired" /> -->
+
+  <!-- Given the published joint states, publish tf for the robot links -->
+  <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /> -->
+
+  <!-- Launch moveit -->
+  <include file="$(find panda_moveit_config)/launch/move_group.launch">
+    <arg name="info" value="true" />
+    <arg name="pipeline" value="ompl" />
+    <arg name="fake_execution" default="false" />
+    <remap from="/joint_states" to="/robot/measured_joint_states" />
+  </include>
+  <!-- <remap from="/joint_states" to="/robot/measured_joint_states" /> -->
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="position_joint_trajectory_controller"/> -->
+  <!-- camera_frame tf -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_camera" args="1.11104 0.245844 2.36753  0.702478348163489 0.711554671125136 0.0113807945174403 0.00921398631201875 panda_link0 camera_link" />
+
+  <!-- Rviz-->
+  <group if="$(arg show_rviz)">
+    <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch">
+      <arg name="rviz_config" value="$(find panda_moveit_config)/launch/moveit.rviz" />
+    </include>
+  </group>
+
+</launch>
