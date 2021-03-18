@@ -26,6 +26,11 @@ source /opt/ros/foxy/setup.bash
 colcon build
 ``````
 
+### Realtime Kernel with Nvidia GPU 
+1. Install 'LIQUORIX' Realtime Kernel. This kernel is the only rt kernel which support Nvidia Driver.
+2. Set "realtime_config_ = franka::RealtimeConfig::kIgnore" in /franka_ros1_control_ws/src/franka_ros/franka_hw/src/franka_hw.cpp
+
+
 ### franka_ros1_control
 Install franka ros1 control for connecting real robot, before that, install some dependence first:
 ``````
