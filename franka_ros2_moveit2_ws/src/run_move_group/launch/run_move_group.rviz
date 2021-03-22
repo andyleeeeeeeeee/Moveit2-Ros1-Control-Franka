@@ -128,6 +128,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
@@ -201,6 +205,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Loop Animation: false
       Name: Trajectory
       Robot Alpha: 0.5
@@ -305,6 +313,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -409,25 +421,81 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 0.1
     - Class: rviz_default_plugins/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
-      Marker Scale: 1
+        All Enabled: false
+        camera_link:
+          Value: true
+        panda_EE:
+          Value: false
+        panda_K:
+          Value: false
+        panda_hand:
+          Value: false
+        panda_leftfinger:
+          Value: false
+        panda_link0:
+          Value: true
+        panda_link1:
+          Value: false
+        panda_link2:
+          Value: false
+        panda_link3:
+          Value: false
+        panda_link4:
+          Value: false
+        panda_link5:
+          Value: false
+        panda_link6:
+          Value: false
+        panda_link7:
+          Value: false
+        panda_link8:
+          Value: false
+        panda_rightfinger:
+          Value: false
+        tcp:
+          Value: true
+      Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        {}
+        panda_link0:
+          camera_link:
+            {}
+          panda_link1:
+            panda_link2:
+              panda_link3:
+                panda_link4:
+                  panda_link5:
+                    panda_link6:
+                      panda_link7:
+                        panda_link8:
+                          panda_EE:
+                            panda_K:
+                              {}
+                          panda_hand:
+                            panda_leftfinger:
+                              {}
+                            panda_rightfinger:
+                              {}
+                            tcp:
+                              {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -471,25 +539,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.927443265914917
+      Distance: 2.5739641189575195
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.17705760896205902
-        Y: 0.6461898684501648
-        Z: 0.48348468542099
+        X: 0.09091156721115112
+        Y: -0.06024825572967529
+        Z: 0.5749537348747253
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3853980302810669
+      Pitch: 0.0853981226682663
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.193586826324463
+      Yaw: 1.4904041290283203
     Saved: ~
 Window Geometry:
   Displays:

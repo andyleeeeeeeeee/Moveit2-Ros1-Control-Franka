@@ -108,10 +108,10 @@ def generate_launch_description():
                      executable='static_transform_publisher',
                      name='base_to_camera',
                      output='log',
-                     arguments=['0.81104', '0.245844', '1.86753', '0.702478348163489',
-                                '0.711554671125136', '0.0113807945174403', '0.00921398631201875', 'panda_link0', 'camera_link'])
-                    #  arguments=['1.11104', '0.245844', '2.36753', '0.702478348163489',
-                    #             '0.711554671125136', '0.0113807945174403', '0.00921398631201875', 'panda_link0', 'camera_link'])
+                     arguments=['0.558866', '0.136917', '0.905323', 
+                                '0.70807408', '0.70130445', '-0.04785912', '0.06717563', 'panda_link0', 'camera_link'])
+    # the hand-ye-calib matrix is obtained by smarteye 9 point calib mathod with 0.93mm reprojection error
+
     # Publish TF
     robot_state_publisher=Node(package='robot_state_publisher',
                                  executable='robot_state_publisher',

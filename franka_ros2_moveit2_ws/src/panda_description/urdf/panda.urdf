@@ -221,4 +221,20 @@
         <limit effort="20" lower="0.0" upper="0.04" velocity="0.2" />
         <mimic joint="panda_finger_joint1" />
     </joint>
+      <!-- grasping frame -->
+      <!-- 0.1034 wrt hand is center, 0.0088 offset to 4 sides-->
+    <link name="tcp"/>
+    <joint name="tcp_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0.1122"/>
+        <parent link="panda_hand"/>
+        <child link="tcp"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    <!-- 0.017 offset for the screw, for hend-eye calib usage -->
+    <!-- <joint name="tcp_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0.1292"/>
+        <parent link="panda_hand"/>
+        <child link="tcp"/>
+        <axis xyz="0 0 1"/>
+    </joint> -->
 </robot>
