@@ -127,15 +127,15 @@ bool FrankaHW::initParameters(ros::NodeHandle& root_nh, ros::NodeHandle& robot_h
         joint_limit_warning_threshold_);
   }
 
-//   std::string realtime_config_param = robot_hw_nh.param("realtime_config", std::string("enforce"));
-//   if (realtime_config_param == "enforce") {
-//     realtime_config_ = franka::RealtimeConfig::kEnforce;
-//   } else if (realtime_config_param == "ignore") {
+  std::string realtime_config_param = robot_hw_nh.param("realtime_config", std::string("enforce"));
+  if (realtime_config_param == "enforce") {
+    realtime_config_ = franka::RealtimeConfig::kEnforce;
+  } else if (realtime_config_param == "ignore") {
     realtime_config_ = franka::RealtimeConfig::kIgnore;
-//   } else {
-//     ROS_ERROR("Invalid realtime_config parameter provided. Valid values are 'enforce', 'ignore'.");
-//     return false;
-//   }
+  } else {
+    ROS_ERROR("Invalid realtime_config parameter provided. Valid values are 'enforce', 'ignore'.");
+    return false;
+  }
 
   // Get full collision behavior config from the parameter server.
   std::vector<double> thresholds =

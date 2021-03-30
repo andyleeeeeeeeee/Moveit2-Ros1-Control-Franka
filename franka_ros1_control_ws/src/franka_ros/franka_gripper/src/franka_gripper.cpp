@@ -98,7 +98,8 @@ bool controlGripper(bool enable) {
   if (enable) {
     msg.command.position = 0.0;
   } else {
-    msg.command.position = 0.035;
+    // msg.command.position = 0.035;
+    msg.command.position = 0.025;
   }
   gripperClient->sendGoal(msg);
 
