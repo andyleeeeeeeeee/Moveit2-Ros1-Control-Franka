@@ -94,12 +94,11 @@ bool grasp(const franka::Gripper& gripper, const GraspGoalConstPtr& goal) {
 bool controlGripper(bool enable) {
   gripperClient->waitForServer();
   control_msgs::GripperCommandGoal msg;
-  msg.command.max_effort = 2.0;
+  msg.command.max_effort = franka_gripper::max_effort_;
   if (enable) {
     msg.command.position = 0.0;
   } else {
-    // msg.command.position = 0.035;
-    msg.command.position = 0.025;
+    msg.command.position = franka_gripper::max_width_;
   }
   gripperClient->sendGoal(msg);
 

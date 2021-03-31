@@ -102,4 +102,7 @@ bool controlGripper(bool enable);
 actionlib::SimpleActionClient<control_msgs::GripperCommandAction>* gripperClient;
 
 ros::ServiceServer gripperService;
+
+float max_effort_;
+float max_width_;
 }  // namespace franka_gripper

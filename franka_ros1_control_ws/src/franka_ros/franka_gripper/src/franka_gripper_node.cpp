@@ -75,6 +75,16 @@ int main(int argc, char** argv) {
   // Server for Ros2 to Ros1 controlling gripper switch
   franka_gripper::gripperService = node_handle.advertiseService("gripper_switch", franka_gripper::gripperSrvCb);
 
+  franka_gripper::max_effort_ = 2.0;
+  if (node_handle.getParam("max_effort", franka_gripper::max_effort_)){
+      ROS_INFO_STREAM("franka_gripper_node: Found max_effort " << franka_gripper::max_effort_);
+  }
+
+  franka_gripper::max_width_ = 0.035;
+  if (node_handle.getParam("max_width", franka_gripper::max_width_)){
+      ROS_INFO_STREAM("franka_gripper_node: Found max_width " << franka_gripper::max_width_);
+  }
+
   double default_speed(0.1);
   if (node_handle.getParam("default_speed", default_speed)) {
     ROS_INFO_STREAM("franka_gripper_node: Found default_speed " << default_speed);
