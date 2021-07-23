@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/libpanda_panda_arm_moveit_ikfast_plugin">
+  <class base_class_type="kinematics::KinematicsBase" name="panda_panda_arm/IKFastKinematicsPlugin" type="panda_panda_arm::IKFastKinematicsPlugin">
+    <description>IKFast61 plugin for closed-form kinematics of panda panda_arm</description>
+  </class>
+</library>

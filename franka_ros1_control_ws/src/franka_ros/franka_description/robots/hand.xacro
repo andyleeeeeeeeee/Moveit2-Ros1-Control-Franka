@@ -60,7 +60,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://franka_description/meshes/visual/finger.stl"/>
+          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
         </geometry>
       </collision>
     </link>
@@ -74,7 +74,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
-          <mesh filename="package://franka_description/meshes/visual/finger.stl"/>
+          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
         </geometry>
       </collision>
    </link>

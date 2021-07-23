@@ -8,7 +8,7 @@ joint_names:
   - panda_joint7
 arm_id: panda
 # Configure the threshold angle for printing joint limit warnings.
-joint_limit_warning_threshold: 0.2 # [rad]
+joint_limit_warning_threshold: 0.01 # [rad]
 # original
 # joint_limit_warning_threshold: 0.1 # [rad]
 # Activate rate limiter? [true|false]

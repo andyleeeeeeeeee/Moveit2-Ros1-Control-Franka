@@ -1,5 +1,5 @@
 <launch>
-  <arg name="load_gripper" default="true" />
+  <arg name="load_gripper" default="false" />
   <arg name="pipeline" default="ompl" />
 
   <!-- GDB Debug Option -->
