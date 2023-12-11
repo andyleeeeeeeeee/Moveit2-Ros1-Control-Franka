@@ -12,7 +12,7 @@ These 2 packages are necessary for ROS2 <---> ROS1 inter-communication.
 
 Install ros1_bridge for bridging topics and services:
 ``````
-sudo apt get install ros-foxy-ros1-bridge
+sudo apt-get install ros-foxy-ros1-bridge
 ``````
 Install action_bridge for bridging action, before that, install some dependence first:
 ``````
